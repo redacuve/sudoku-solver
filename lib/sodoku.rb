@@ -1,0 +1,3 @@
+class Sodoku
+
+end
