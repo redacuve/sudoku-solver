@@ -10,20 +10,20 @@ class Sodoku
   def solve
     9.times do |y|
       9.times do |x|
-        if @sodoku[y][x].zero?
-          (1..9).each do |n|
-            if posible?(y, x, n)
-              @sodoku[y][x] = n
-              solve
-              if solved?
-                break
-              else
-                @sodoku[y][x] = 0
-              end
-            end
+        next unless @sodoku[y][x].zero?
+
+        (1..9).each do |n|
+          next unless posible?(y, x, n)
+
+          @sodoku[y][x] = n
+          solve
+          if solved?
+            break
+          else
+            @sodoku[y][x] = 0
           end
-          return
         end
+        return
       end
     end
   end
