@@ -4,6 +4,6 @@ class Sodoku
   end
 
   def show
-    @soduko.each { |e| print "#{e}\n" }
+    @sodoku.each { |e| print "#{e}\n" }
   end
 end
