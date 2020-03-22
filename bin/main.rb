@@ -12,3 +12,6 @@ sodoku = [[0, 5, 2, 0, 0, 6, 0, 0, 9],
 
 my_sodoku = Sodoku.new(sodoku)
 my_sodoku.show
+my_sodoku.solve
+puts ""
+my_sodoku.show
