@@ -1,17 +1,9 @@
 require_relative '../lib/sudoku.rb'
+require 'csv'
 
-sudoku = [[0, 0, 2, 0, 0, 3, 6, 0, 0],
-          [0, 0, 0, 0, 6, 0, 0, 0, 0],
-          [1, 0, 7, 0, 5, 9, 0, 0, 0],
-          [0, 8, 0, 0, 0, 0, 7, 0, 0],
-          [9, 3, 0, 0, 0, 6, 0, 0, 1],
-          [0, 0, 0, 0, 2, 0, 5, 0, 0],
-          [8, 0, 0, 0, 0, 0, 2, 0, 0],
-          [0, 0, 0, 0, 0, 4, 0, 0, 5],
-          [0, 0, 0, 1, 0, 0, 0, 8, 9]]
-
+sudoku = CSV.read('lib/sudoku.csv').each { |line| line.map!(&:to_i) }
 my_sudoku = Sudoku.new(sudoku)
 my_sudoku.show
 my_sudoku.solve
-puts ''
+puts "\nResult:\n\n"
 my_sudoku.show
