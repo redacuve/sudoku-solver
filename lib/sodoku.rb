@@ -17,16 +17,16 @@ class Sodoku
 
           @sodoku[y][x] = n
           solve
-          if solved?
-            break
-          else
-            @sodoku[y][x] = 0
-          end
+          break if solved?
+
+          @sodoku[y][x] = 0
         end
         return
       end
     end
   end
+
+  private
 
   def posible?(y, x, n)
     return false unless @sodoku[y][x].zero?
