@@ -37,3 +37,6 @@ Layout/ExtraSpacing:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
+
+Naming/MethodParameterName:
+  Enabled: false
