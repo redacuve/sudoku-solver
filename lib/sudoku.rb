@@ -1,10 +1,15 @@
 class Sudoku
   def initialize(sudoku)
     @sudoku = sudoku
+    @solved = nil
   end
 
   def show
-    @sudoku.each { |e| print "#{e}\n" }
+    if @solved.nil? || @solved
+      @sudoku.each { |e| print "#{e}\n" }
+    else
+      puts 'No posible solutions'
+    end
   end
 
   def solve
@@ -17,11 +22,11 @@ class Sudoku
 
           @sudoku[y][x] = n
           solve
-          break if solved?
+          return @solved = true if solved?
 
           @sudoku[y][x] = 0
         end
-        return
+        return @solved = false
       end
     end
   end
