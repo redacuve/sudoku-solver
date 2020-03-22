@@ -25,4 +25,13 @@ class Sodoku
     end
     true
   end
+
+  def solved?
+    (0...9).each do |y|
+      (0...9).each do |x|
+        return false if @soduko[y][x].zero?
+      end
+    end
+    true
+  end
 end
